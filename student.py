@@ -23,3 +23,14 @@ for state, city in state_cities.items():
         group[state] = []
         group[state].append(city)
 print(group['Florida'])
+
+def county_counter(state):
+    county_dict = {}
+    for county, aqi in group[state]:
+        if county in county_dict:
+            county_dict[county] += 1
+        else:
+            county_dict[county] = 1
+    return county_dict
+
+county_counter('Pennsylvania')
